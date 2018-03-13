@@ -65,6 +65,12 @@
 			<param name="testISUsername" expression="${testISUsername}" />
 			<param name="testISPassword" expression="${testISPassword}" />
 			
+			<!--target server UM props -->
+			<param name="testUMrealmHost" expression="${testUMrealmHost}" />
+			<param name="testUMrealmPort" expression="${testUMrealmPort}" />
+			<param name="testUMUsername" expression="${testUMUsername}" />
+			<param name="testUMPassword" expression="${testUMPassword}" />
+			
 			<!-- general props -->
 			<param name="repoName" expression="${repositoryName}" />
 			<param name="repoPath" expression="${buildOutputDir}" />

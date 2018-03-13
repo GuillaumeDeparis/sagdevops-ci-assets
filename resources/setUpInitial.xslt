@@ -13,6 +13,11 @@
 	<xsl:param name="testISUsername"/>
 	<xsl:param name="testISPassword"/>
 	
+	<xsl:param name="testUMrealmHost"/>
+	<xsl:param name="testUMrealmPort"/>
+	<xsl:param name="testUMUsername"/>
+	<xsl:param name="testUMPassword"/>
+	
 	<xsl:param name="repoName"/>
 	<xsl:param name="repoPath"/>
 	<xsl:param name="projectName"/>
@@ -44,6 +49,21 @@
 					<Test>true</Test>
 				</isalias>
 			</IS>
+			<UniversalMessaging>
+				<universalmessagingalias name="testUMServer">
+					<realmURL>nsp://<xsl:value-of select="$testUMrealmHost"/>:<xsl:value-of select="$testUMrealmPort"/></realmURL>
+					<useSSL>false</useSSL>
+					<useBasicAuth>false</useBasicAuth>
+					<version>9.10</version>
+					<keyStorePath/>
+					<keyStorepassword/>
+					<trustStorePath/>
+					<trustStorepassword/>
+					<user><xsl:value-of select="$testUMUsername"/></user>
+					<pwd><xsl:value-of select="$testUMPassword"/></pwd>
+					<Test>true</Test>
+				</universalmessagingalias>
+			</UniversalMessaging>
 			<xsl:apply-templates select="@* | *" />
 		</Environment>
 	</xsl:template>
@@ -82,6 +102,7 @@
 				<DeploymentMap description="" name="myDeploymentMap"/>			
 				<MapSetMapping mapName="myDeploymentMap" setName="myDeploymentSet">								
 					<alias type="IS">testServer</alias>
+					<alias type="UniversalMessaging">testUMServer</alias>
 				</MapSetMapping>	
 				<DeploymentCandidate description="" mapName="myDeploymentMap" name="myDeployment"/>
 			</Project>

@@ -6,6 +6,7 @@
 	<import file="buildInitProject.xml"/>
 	<import file="buildCallABE.xml"/>
 	<import file="buildDeployer.xml"/>
+	<import file="buildExportBuild.xml"/>
 	<import file="buildTest.xml"/>
 	
 
@@ -19,8 +20,12 @@
 		<description>Deploy project.</description>
 	</target>
 
-        <target name="test" depends="initProject,startTest">
+    <target name="test" depends="initProject,startTest">
 		<description>Run tests.</description>
+	</target>
+
+    <target name="exportBuild" depends="initProject,exportBuildWM">
+		<description>Export build</description>
 	</target>	
 	
 	<target name="buildDeployTest" depends="build, deploy, test">

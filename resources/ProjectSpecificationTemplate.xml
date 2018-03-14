@@ -53,8 +53,8 @@
 				<Test>true</Test>
 			</rulesserveralias>
 		</RulesServer-->		
-		<Repository>
-		</Repository>	
+		<!--<Repository>
+		</Repository>	-->
 	</Environment>
 	
 	<Projects>

@@ -74,7 +74,7 @@
 			<!-- general props -->
 			<param name="repoName" expression="${repositoryName}" />
 			<param name="repoPath" expression="${buildOutputDir}" />
-			<param name="projectName" expression="${projectName}" />				
+			<param name="projectName" expression="${projectName}" />		
 		</xslt>				
 	</target>
 	
@@ -89,7 +89,7 @@
 		<exec dir="${deployerInstallationPath}"  executable="${deployerInstallationPath}/${deployerAutomatorExecutable}" failonerror="true" resultproperty="appState">		
 			<arg value="${pathProjectdefinitionFile}" />
 		</exec>
-		
+		<echo message ="Project Automator successfully executed."/>
 		<if>			
 			<equals arg1="${appState}" arg2="0" trim="true"/>			
 			<then>
@@ -99,7 +99,7 @@
 				<fail message="Project Automator failed."/>
 			</else>
 		</if>		
-	</target>
+	</target>	
 	
 	<target name="triggerDeploy">
 		<exec executable="${deployerInstallationPath}/${deployerExecutable}" dir="${deployerInstallationPath}" failonerror="true" resultproperty="appState">
